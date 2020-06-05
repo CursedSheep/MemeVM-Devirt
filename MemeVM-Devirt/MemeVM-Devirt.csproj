@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D10F9068-B297-4251-9032-9A1AAB808B3B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MemeVM_Devirt</RootNamespace>
+    <AssemblyName>MemeVM-Devirt</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="dnlib">
+      <HintPath>..\..\..\..\Downloads\JitUnpacker-Framework-master\bin\Debug\dnlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HandleInstructions\HandlersOld\Add.cs" />
+    <Compile Include="HandleInstructions\HandlersOld\Call.cs" />
+    <Compile Include="HandleInstructions\HandlersOld\Cgt.cs" />
+    <Compile Include="HandleInstructions\HandlersOld\Clt.cs" />
+    <Compile Include="HandleInstructions\HandlersOld\Cmp.cs" />
+    <Compile Include="HandleInstructions\HandlersOld\Dup.cs" />
+    <Compile Include="HandleInstructions\HandlersOld\Int.cs" />
+    <Compile Include="HandleInstructions\HandlersOld\Jf.cs" />
+    <Compile Include="HandleInstructions\HandlersOld\Jmp.cs" />
+    <Compile Include="HandleInstructions\HandlersOld\Jt.cs" />
+    <Compile Include="HandleInstructions\HandlersOld\Ldarg.cs" />
+    <Compile Include="HandleInstructions\HandlersOld\Ldfld.cs" />
+    <Compile Include="HandleInstructions\HandlersOld\Ldloc.cs" />
+    <Compile Include="HandleInstructions\HandlersOld\Long.cs" />
+    <Compile Include="HandleInstructions\HandlersOld\Newarr.cs" />
+    <Compile Include="HandleInstructions\HandlersOld\Null.cs" />
+    <Compile Include="HandleInstructions\HandlersOld\Pop.cs" />
+    <Compile Include="HandleInstructions\HandlersOld\Ret.cs" />
+    <Compile Include="HandleInstructions\HandlersOld\Stfld.cs" />
+    <Compile Include="HandleInstructions\HandlersOld\Stloc.cs" />
+    <Compile Include="HandleInstructions\HandlersOld\String.cs" />
+    <Compile Include="HandleInstructions\Handlers\Add.cs" />
+    <Compile Include="HandleInstructions\Handlers\Call.cs" />
+    <Compile Include="HandleInstructions\Handlers\Cgt.cs" />
+    <Compile Include="HandleInstructions\Handlers\Clt.cs" />
+    <Compile Include="HandleInstructions\Handlers\Cmp.cs" />
+    <Compile Include="HandleInstructions\Handlers\Dup.cs" />
+    <Compile Include="HandleInstructions\Handlers\Int.cs" />
+    <Compile Include="HandleInstructions\Handlers\Jf.cs" />
+    <Compile Include="HandleInstructions\Handlers\Jmp.cs" />
+    <Compile Include="HandleInstructions\Handlers\Jt.cs" />
+    <Compile Include="HandleInstructions\Handlers\Ldarg.cs" />
+    <Compile Include="HandleInstructions\Handlers\Ldfld.cs" />
+    <Compile Include="HandleInstructions\Handlers\Ldloc.cs" />
+    <Compile Include="HandleInstructions\Handlers\Long.cs" />
+    <Compile Include="HandleInstructions\Handlers\Newarr.cs" />
+    <Compile Include="HandleInstructions\Handlers\Null.cs" />
+    <Compile Include="HandleInstructions\Handlers\Pop.cs" />
+    <Compile Include="HandleInstructions\Handlers\Ret.cs" />
+    <Compile Include="HandleInstructions\Handlers\Stfld.cs" />
+    <Compile Include="HandleInstructions\Handlers\Stloc.cs" />
+    <Compile Include="HandleInstructions\Handlers\String.cs" />
+    <Compile Include="InitPhase\IHandler.cs" />
+    <Compile Include="InitPhase\Initializebytes.cs" />
+    <Compile Include="InitPhase\Instruction.cs" />
+    <Compile Include="InitPhase\Opcode.cs" />
+    <Compile Include="InitPhase\RuntimeHelpers.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
